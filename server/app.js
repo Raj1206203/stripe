@@ -28,16 +28,16 @@ app.use("/api",limiter);
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-app.use(cookieParser);
+app.use(cookieParser());
 
 app.get("/", (req,res)=> {
     res.status(200).json({
         success : true ,
-        messaage : "Stripe is Running",
+        message : "Stripe is Running",
     });
 });
 
-app.get("api/health",(req,res)=>{
+app.get("/api/health",(req,res)=>{
     res.status(200).json({
         success : true,
         message : "Server is Healthy",

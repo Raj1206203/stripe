@@ -1,7 +1,5 @@
 
-import dotenv from "dotenv";
-
-dotenv.config();
+import "dotenv/config";
 
 import app from "./app.js";
 import connectDB from "./config/db.js";
@@ -17,6 +15,7 @@ const startServer = async () => {
         `Server running on http://localhost:${PORT}`
       );
     });
+
   } catch (error) {
     console.error("Server startup failed:", error.message);
     process.exit(1);
